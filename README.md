@@ -25,31 +25,23 @@ Note that the role itself has become a link. Open that link in a new tab.
 
 Here you will update the policies of your instance to allow it to work with Forecast. Click the `Attach policies` button.
 Search and check the box next to the following policies:
--IAMFullAccess
--AmazonForecastFullAccess
+
+- `IAMFullAccess`
+- `AmazonForecastFullAccess`
+- `AWSKeyManagementServicePowerUser`
 
 Finally click the `Attach policy` button on the bottom right corner.
 
 
 Now click on `Trust relationship` tab > click on `Edit trust relationships` button > update the json file with the following:
-        "Service": [
+
+```
+"Service": [
           "forecast.amazonaws.com",
           "sagemaker.amazonaws.com"
         ]
-        
-Next click the `Create policy` button at the top. In the new page, click the `JSON` tab.
+```
 
-Erase all of the content that is in the editor and paste the content in [IAM_Policy.json](IAM_Policy.json).
-
-After pasting, click the `Review policy` button. Give the policy again a personalize name like `FirstNameLastNameForecastIAMPolicy`.
-
-For the description, enter in something about it being used to demo Forecast. Finally click `Create policy`. Close this tab or window.
-
-Once closed you should see the tab for adding permissions to your SageMaker role. Click the `Filter Policies` link, then select
-`Customer managed`. After that, you should see the policy you just created, if the list is long, just paste the name in the search bar to reduce the number
-of items. If you do not see it still, click the refresh icon in the top right of the page.
-
-After clicking the checkbox next to the policy, click `Attach policy` at the bottom of the page. Then close this window.
 
 Back at the SageMaker Notebook Instance creation page, now click `Create notebook instance` at the bottom of the page. This process will take 5-10 minutes to complete. Once the status says `InService` you are ready to continue to the 
 next session.

@@ -4,6 +4,11 @@ This guide will walk through the creation of a new SageMaker Notebook Instance, 
 and your first project with Amazon Forecast. The Notebook Instance can then be used again for additional exploratory work with 
 Amazon Forecast.
 
+## Creating your S3 Data Bucket
+
+Go the s3 Console. Create a bucket named `amazon-forecast-data-<YOUR_ACCOUNT_ID>` in the `us-east-1` region. 
+Leave everything else as default.
+
 ## Creating Your Notebook Instance
 
 First you will need to create a new Notebook Instance, to do that begin by logging into the AWS Console.
